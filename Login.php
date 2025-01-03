@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration Form</title>
+  <title>Login Form</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       background: linear-gradient(135deg, #6a11cb, #2575fc);
       display: flex;
       justify-content: center;
@@ -16,47 +16,50 @@
     }
     form {
       background: #fff;
-      padding: 30px 40px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      padding: 40px 50px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       width: 100%;
-      max-width: 400px;
+      max-width: 420px;
     }
     form h2 {
       text-align: center;
       color: #333;
-      margin-bottom: 20px;
+      font-size: 24px;
+      margin-bottom: 30px;
+      font-weight: 600;
     }
     .form-group {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
     .form-group label {
       display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
+      font-weight: 500;
+      margin-bottom: 8px;
       color: #555;
     }
     .form-group input {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       font-size: 14px;
       border: 1px solid #ccc;
-      border-radius: 5px;
+      border-radius: 8px;
       outline: none;
-      transition: border-color 0.3s ease;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
     .form-group input:focus {
       border-color: #6a11cb;
+      box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
     }
     button {
       width: 100%;
-      padding: 12px;
+      padding: 14px;
       font-size: 16px;
       font-weight: bold;
       color: #fff;
       background: #6a11cb;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
       transition: background 0.3s ease;
     }
@@ -66,39 +69,35 @@
     button:active {
       transform: scale(0.98);
     }
-    .login-link {
-      margin-top: 15px;
+    a {
       display: block;
-      text-decoration: none;
-      font-size: 14px;
-      color: #6a11cb;
-      font-weight: bold;
+      margin-top: 20px;
       text-align: center;
+      font-size: 15px;
+      color: #6a11cb;
+      font-weight: 500;
+      text-decoration: none;
       transition: color 0.3s ease;
     }
-    .login-link:hover {
+    a:hover {
       color: #2575fc;
     }
   </style>
 </head>
 <body>
-  <form action="register.php" method="POST">
-    <input type="hidden" name="action" value="register">
-    <h2>Registration Form</h2>
+  <form action="login.php" method="POST">
+    <input type="hidden" name="action" value="login">
+    <h2>Login Form</h2>
     <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+      <label for="login-email">Email</label>
+      <input type="email" id="login-email" name="email" required placeholder="Enter your email">
     </div>
     <div class="form-group">
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" required>
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" name="password" required placeholder="Enter your password">
     </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
-    </div>
-    <button type="submit">Register</button>
-    <a href="http://localhost:8000/Login.php" class="login-link">Already have an account? Login</a>
+    <button type="submit">Login</button>
+    <a href="http://localhost:8000/index.php">Don't have an account? Register</a>
   </form>
 </body>
 </html>

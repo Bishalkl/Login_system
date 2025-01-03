@@ -53,9 +53,19 @@
 </head>
 <body>
   <div class="welcome-container">
-    <h1>Welcome, User!</h1>
+   <?php
+    session_start();
+
+    // check if the user is logged in
+    if(!isset($_SESSION["user_id"])) {
+        header("Location: Login.php?error=Please login first.");
+        exit();
+    }
+
+    echo  " <h1>Welcome," . $_SESSION["username"] . "!</h1>";
+   ?>
     <p>You have successfully logged in.</p>
-    <form action="login.php" method="POST">
+    <form action="logout.php" method="POST">
       <button type="submit" class="logout-button">Logout</button>
     </form>
   </div>
